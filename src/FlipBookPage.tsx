@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import styles from "./css/FlipbookPage.module.css";
 import FlipbookComponent from "./flipbook";
 
@@ -42,6 +42,16 @@ const SharedFlipbook: React.FC = () => {
     fetchFlipbookData();
   }, [id]);
 
+  useEffect(() => {
+    if (flipbookData) {
+      document.title = flipbookData.title;
+      document.querySelector('meta[property="og:title"]')?.setAttribute('content', flipbookData.title);
+      document.querySelector('meta[property="og:description"]')?.setAttribute('content', flipbookData.description);
+      document.querySelector('meta[property="og:image"]')?.setAttribute('content', flipbookData.coverImage);
+      // Update other meta tags as needed
+    }
+  }, [flipbookData]);
+
 
 
   if (error || !flipbookData) {
@@ -51,7 +61,7 @@ const SharedFlipbook: React.FC = () => {
   const { title, description, coverImage } = flipbookData;
 
   return (
-    <>
+    <HelmetProvider>
       <Helmet>
         <title>{title}</title>
         <meta name="description" content={description} />
@@ -80,7 +90,7 @@ const SharedFlipbook: React.FC = () => {
           <p>Total pages: {flipbookData.images.length}</p>
         </footer>
       </div>
-    </>
+      </HelmetProvider>
   );
 };
 
