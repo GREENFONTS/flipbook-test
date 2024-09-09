@@ -5,12 +5,10 @@ import HomeLayout from "./HomeLayout";
 
 function App() {
   return (
-      <div className="App">
-        <Routes>
-          <Route path="/" element={<HomeLayout />} />
-          <Route path="/flipbook/:id" element={<SharedFlipbook />} />
-        </Routes>
-      </div>
+    <Routes>
+      <Route path="/" element={<HomeLayout />} />
+      <Route path="/flipbook/:id" element={<SharedFlipbook />} />
+    </Routes>
   );
 }
 
