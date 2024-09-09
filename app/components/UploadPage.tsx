@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { FaCloudUploadAlt, FaFolder, FaFilePdf, FaTimes } from "react-icons/fa";
-import styles from "./css/UploadPage.module.css";
-import LoadingSpinner from "./LoadingSpinner";
-import { FlipbookData } from "./FlipBookPage";
+import styles from "@/app/styles/UploadPage.module.css";
+import LoadingSpinner from "@/app/components/LoadingSpinner";
+import { FlipbookData } from "@/app/types";
 
 const UploadPage = ({
   setFlipbookData,

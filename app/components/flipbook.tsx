@@ -3,9 +3,9 @@ import HTMLFlipBook from "react-pageflip";
 import SocialShare from "./SocialShare";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
-import styles from "./css/FlipbookPage.module.css";
-import LoadingSpinner from "./LoadingSpinner";
-import { FlipbookData } from "./FlipBookPage";
+import styles from "@/app/styles/FlipbookPage.module.css";
+import LoadingSpinner from "@/app/components/LoadingSpinner";
+import { FlipbookData } from "@/app/types";
 
 const FlipbookComponent = ({
   isPublic,
@@ -71,7 +71,6 @@ const FlipbookComponent = ({
 
   return (
     <div
-      className="flipbook-page"
       style={{
         overflow: "hidden",
         display: "flex",
@@ -168,12 +167,11 @@ const FlipbookComponent = ({
           </div>
         ) : ( */}
         <div
-          id="flipbook"
           style={{
             opacity: 1,
             transition: "opacity 0.5s ease-in",
             display: page === 0 ? "none" : "block",
-            height: '65vh'
+            
           }}
         >
           <div
@@ -182,7 +180,7 @@ const FlipbookComponent = ({
               justifyContent: "center",
               alignItems: "center",
               position: "relative",
-              padding: "0 50px",
+              padding: "10px 25px",
             }}
           >
             <div
@@ -198,6 +196,7 @@ const FlipbookComponent = ({
             >
               &#10094;
             </div>
+            <div style={{width: "100%"}}>
             <HTMLFlipBook
               width={350}
               height={533}
@@ -238,6 +237,9 @@ const FlipbookComponent = ({
                 </div>
               ))}
             </HTMLFlipBook>
+            </div>
+          
+            
             <div
               className="arrow right"
               onClick={nextPage}
@@ -252,12 +254,12 @@ const FlipbookComponent = ({
               &#10095;
             </div>
           </div>
-          <div style={{ textAlign: "center", margin: "10px 0" }}>
+          <div style={{ textAlign: "center", padding: "0px 10px", width: "100%" }}>
             <span className="page-info">
               {page} / {flipbookData.images.length}
             </span>
           </div>
-          <div style={{ width: "100%", maxWidth: "550px", margin: "0 auto" }}>
+          <div style={{ width: "90%", padding: "10px 10px", margin: "0 auto" }}>
             <input
               type="range"
               min="1"
