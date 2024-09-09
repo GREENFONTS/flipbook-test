@@ -48,7 +48,7 @@ const SharedFlipbook: React.FC = () => {
     return <div className={styles.error}>{error}</div>;
   }
 
-  const { title, description, coverImage, images } = flipbookData;
+  const { title, description, coverImage } = flipbookData;
 
   return (
     <>

@@ -45,7 +45,7 @@ interface SocialIconProps {
   onClick: () => void;
 }
 
-const SocialIcon: React.FC<SocialIconProps> = ({ platform, color, icon, onClick }) => {
+const SocialIcon: React.FC<SocialIconProps> = ({ color, icon, onClick }) => {
   return (
     <div
       onClick={onClick}

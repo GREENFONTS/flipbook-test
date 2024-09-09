@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import HTMLFlipBook from "react-pageflip";
 import SocialShare from "./SocialShare";
 import { LazyLoadImage } from "react-lazy-load-image-component";
