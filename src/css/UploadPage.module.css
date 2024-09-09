@@ -1,0 +1,87 @@
+.uploadPage {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.uploadContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  border: 2px dashed #ccc;
+  border-radius: 4px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.dropZone {
+  flex: 1;
+  text-align: center;
+  cursor: pointer;
+}
+
+.divider {
+  margin: 0 20px;
+  color: #ccc;
+  font-weight: bold;
+}
+
+.browseButton {
+  background-color: #f0f0f0;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.fileInput {
+  display: none;
+}
+
+.fileList {
+  margin-top: 20px;
+}
+
+.fileItem {
+  display: flex;
+  align-items: center;
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.fileItem svg {
+  margin-right: 10px;
+}
+
+.removeButton {
+  margin-left: auto;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #ff4136;
+}
+
+.uploadProgress {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  margin: auto;
+  width: 100%;
+}
+
+.submitButton {
+  background-color: #ff69b4;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
+}
